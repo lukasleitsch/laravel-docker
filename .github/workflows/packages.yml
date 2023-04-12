@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE: ${{ github.repository }} // lorisleiva/laravel-docker
+  IMAGE: ${{ github.repository }} # lorisleiva/laravel-docker
 
 jobs:
   docker:
