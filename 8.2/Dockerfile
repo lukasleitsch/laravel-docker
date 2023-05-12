@@ -1,7 +1,8 @@
 FROM --platform=$BUILDPLATFORM php:8.2.6-alpine
 
-ARG TARGETOS
-ARG TARGETARCH
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
+RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 
 # Add docker-php-extension-installer script
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
