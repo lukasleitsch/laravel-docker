@@ -41,7 +41,7 @@ RUN apk add --no-cache \
 ENV PATH ./vendor/bin:/composer/vendor/bin:/root/.composer/vendor/bin:/usr/local/bin:$PATH
 
 # Install PHP_CodeSniffer
-RUN composer global require "squizlabs/php_codesniffer=*"
+#RUN composer global require "squizlabs/php_codesniffer=*"
 
 # Setup working directory
 WORKDIR /var/www
