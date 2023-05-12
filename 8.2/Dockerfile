@@ -12,7 +12,7 @@ RUN apk add --no-cache \
     npm \
     yarn \
     openssh-client \
-    rsync \
+    rsync
 
 # Install php extensions
 RUN chmod +x /usr/local/bin/install-php-extensions && \
