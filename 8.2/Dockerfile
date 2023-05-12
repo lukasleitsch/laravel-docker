@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM php:8.2.6-alpine
+FROM --platform=$TARGETPLATFORM php:8.2.6-alpine
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
