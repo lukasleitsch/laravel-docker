@@ -23,19 +23,19 @@ RUN apk add --no-cache \
 RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions \
     #@composer \
-    redis-stable
-    #imagick-stable \
-    #xdebug-stable \
-    #bcmath \
-    #calendar \
-    #exif \
-    #gd \
-    #intl \
-    #pdo_mysql \
-    #pdo_pgsql \
-    #pcntl \
-    #soap \
-    #zip
+    redis-stable \
+    imagick-stable \
+    xdebug-stable \
+    bcmath \
+    calendar \
+    exif \
+    gd \
+    intl \
+    pdo_mysql \
+    pdo_pgsql \
+    pcntl \
+    soap \
+    zip
 
 # Add local and global vendor bin to PATH.
 ENV PATH ./vendor/bin:/composer/vendor/bin:/root/.composer/vendor/bin:/usr/local/bin:$PATH
