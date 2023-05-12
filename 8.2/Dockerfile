@@ -1,4 +1,4 @@
-FROM php:8.2-alpine3.17
+FROM --platform=$BUILDPLATFORM php:8.2-alpine3.17
 
 # Add docker-php-extension-installer script
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
@@ -7,24 +7,12 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 RUN apk add --no-cache \
     bash \
     curl \
-    freetype-dev \
-    g++ \
-    gcc \
     git \
-    icu-dev \
-    icu-libs \
-    libc-dev \
-    libzip-dev \
-    make \
-    mysql-client \
     nodejs \
     npm \
-    oniguruma-dev \
     yarn \
     openssh-client \
-    postgresql-libs \
     rsync \
-    zlib-dev
 
 # Install php extensions
 RUN chmod +x /usr/local/bin/install-php-extensions && \
