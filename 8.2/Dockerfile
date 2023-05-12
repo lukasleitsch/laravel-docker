@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM php:8.2-alpine3.17
+FROM --platform=$BUILDPLATFORM php:8.2.5-alpine
 
 # Add docker-php-extension-installer script
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
@@ -8,11 +8,13 @@ RUN apk add --no-cache \
     bash \
     curl \
     git \
+    mysql-client \
+    postgresql-client \
     nodejs \
     npm \
     yarn \
     openssh-client \
-    rsync
+    rsync 
 
 # Install php extensions
 RUN chmod +x /usr/local/bin/install-php-extensions && \
