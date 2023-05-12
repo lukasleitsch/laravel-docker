@@ -1,8 +1,5 @@
 FROM php:8.2.6-alpine
 
-ARG TARGETOS
-ARG TARGETARCH
-
 # Add docker-php-extension-installer script
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
@@ -22,7 +19,7 @@ RUN apk add --no-cache \
 # Install php extensions
 RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions \
-    #@composer \
+    @composer \
     redis-stable \
     imagick-stable \
     xdebug-stable \
@@ -41,7 +38,7 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
 ENV PATH ./vendor/bin:/composer/vendor/bin:/root/.composer/vendor/bin:/usr/local/bin:$PATH
 
 # Install PHP_CodeSniffer
-#RUN composer global require "squizlabs/php_codesniffer=*"
+RUN composer global require "squizlabs/php_codesniffer=*"
 
 # Setup working directory
 WORKDIR /var/www
