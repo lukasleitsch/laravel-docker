@@ -48,7 +48,7 @@ jobs:
         with:
           push: true
           context: ${{ matrix.php }}
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64, linux/arm64, linux/arm64/v8
           tags: |
             ghcr.io/${{ env.IMAGE }}:${{ matrix.tag }}
           cache-from: type=registry,ref=ghcr.io/${{ env.IMAGE }}:${{ matrix.tag }}
