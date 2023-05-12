@@ -1,5 +1,8 @@
 FROM php:8.1.18-alpine
 
+ARG TARGETOS
+ARG TARGETARCH
+
 # Add docker-php-extension-installer script
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
