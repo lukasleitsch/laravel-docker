@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM php:8.1.19-alpine
+FROM --platform=$BUILDPLATFORM php:8.1.18-alpine
 
 # Add docker-php-extension-installer script
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
