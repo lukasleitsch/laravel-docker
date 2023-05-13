@@ -17,14 +17,14 @@ jobs:
         include:
           - tag: 'latest'
             php: '8.2'
-          # - tag: 'stable'
-          #   php: '8.2'
-          # - tag: '8.2'
-          #   php: '8.2'
-          # - tag: '8.1'
-          #   php: '8.1'
-          # - tag: '8.0'
-          #   php: '8.0'
+          - tag: 'stable'
+            php: '8.2'
+          - tag: '8.2'
+            php: '8.2'
+          - tag: '8.1'
+            php: '8.1'
+          - tag: '8.0'
+            php: '8.0'
 
     steps:
       - name: Checkout
@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           push: true
           context: ${{ matrix.php }}
